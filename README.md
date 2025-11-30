@@ -44,7 +44,7 @@ Os organizadores da competição realizada durante o projeto anterior gostaram m
 - Para calcular o IMC
   - Fórmula: imc = peso / (altura x altura)
 - Para calcular a média válida
-  - Método: Utilize o metodologia abordada no Projeto de Certificação 1.
+  - Método: Utilize a metodologia abordada no Projeto de Certificação 1.
 
 ## Exemplo de entrada
   ```

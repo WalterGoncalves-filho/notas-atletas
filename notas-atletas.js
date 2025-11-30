@@ -5,7 +5,6 @@ class Atleta {
     this.peso = peso;
     this.altura = altura;
     this.notas = notas;
-    this.mediaValida = 0;
   }
 
   calculaCategoria() {
@@ -27,6 +26,9 @@ class Atleta {
   }
 
   calculaMediaValida() {
+    if (!this.notas || this.notas.length < 3) {
+      return 0;
+    }
     let notasOrdenadas = [...this.notas].sort((a, b) => a - b)
     notasOrdenadas.pop()
     notasOrdenadas.shift()
@@ -34,8 +36,7 @@ class Atleta {
     notasOrdenadas.forEach(nota => {
       soma += nota
     })
-    this.mediaValida = soma / notasOrdenadas.length
-    return this.mediaValida;
+    return soma / notasOrdenadas.length;
   }
 
   obtemNomeAtleta() {
@@ -48,6 +49,10 @@ class Atleta {
 
   obtemPesoAtleta() {
     return this.peso;
+  }
+
+  obtemAlturaAtleta() {
+    return this.altura;
   }
 
   obtemNotasAtleta() {
@@ -82,8 +87,8 @@ console.log();
 console.log("Nome: " + atleta.obtemNomeAtleta());
 console.log("Idade: " + atleta.obtemIdadeAtleta());
 console.log("Peso: " + atleta.obtemPesoAtleta());
-console.log("Altura: " + atleta.altura);
-console.log("Notas: " + atleta.notas);
+console.log("Altura: " + atleta.obtemAlturaAtleta());
+console.log("Notas: " + atleta.obtemNotasAtleta());
 console.log("Categoria: " + atleta.obtemCategoria());
-console.log("IMC: " + atleta.obtemIMC());
-console.log("Média válida: " + atleta.obtemMediaValida());
+console.log("IMC: " + atleta.obtemIMC().toFixed(2).replace('.', ','));
+console.log("Média válida: " + atleta.obtemMediaValida().toFixed(8).replace('.', ','));
