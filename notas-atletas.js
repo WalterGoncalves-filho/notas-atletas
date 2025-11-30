@@ -87,3 +87,5 @@ console.log("Notas: " + atleta.notas);
 console.log("Categoria: " + atleta.obtemCategoria());
 console.log("IMC: " + atleta.obtemIMC());
 console.log("Média válida: " + atleta.obtemMediaValida());
+
+
